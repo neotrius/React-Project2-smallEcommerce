@@ -4,7 +4,8 @@ function GoodsItem(props) {
         displayName,
         displayDescription,
         price,
-        displayAssets
+        displayAssets,
+        addToBasket
     } = props
 
     return <div className="card" id={mainId}>
@@ -15,7 +16,12 @@ function GoodsItem(props) {
             <p>{displayDescription || 'no description'}</p>
             <div className="card-action">
                 <span className="card-title">{displayName}</span>
-                <button className="btn">Buy</button>
+                <button className="btn" onClick={() => addToBasket({
+                    mainId,
+                    displayName,
+                    price
+                })}>Buy
+                </button>
                 <span className="right"
                       style={{fontSize: '1.8rem'}}>{price.finalPrice} Coins</span>
             </div>
