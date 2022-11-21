@@ -4,11 +4,20 @@ function BasketItem(props) {
         displayName,
         price,
         quantity,
-        removeFromBasket
+        removeFromBasket,
+        incrementQuantity,
+        decrementQuantity
     } = props
 
     return <li className="collection-item">
-        {displayName} x{quantity} = {price.finalPrice * quantity}
+        {displayName}
+        <i className="material-icons basket-quantity"
+           onClick={() => decrementQuantity(mainId)}>remove</i>
+        x{quantity}
+        <i className="material-icons basket-quantity"
+           onClick={() => incrementQuantity(mainId)}>add</i>
+
+        = {price.finalPrice * quantity}
         <span className="secondary-content"
               onClick={() => removeFromBasket(mainId)}>
             <i className="material-icons basket-delete">close</i>

@@ -40,6 +40,37 @@ function Shop() {
         const newOrder = order.filter(el => el.mainId !== mainId)
         setOrder(newOrder)
     }
+
+    const incrementQuantity = (mainId) => {
+        const newOrder = order.map(el => {
+            if (el.mainId === mainId) {
+                const newQuantity = el.quantity + 1
+                return {
+                    ...el,
+                    quantity: newQuantity
+                }
+            } else {
+                return el
+            }
+        })
+        setOrder(newOrder)
+    }
+
+    const decrementQuantity = (mainId) => {
+        const newOrder = order.map(el => {
+            if (el.mainId === mainId) {
+                const newQuantity = el.quantity - 1
+                return {
+                    ...el,
+                    quantity: newQuantity >= 0 ? newQuantity : 0
+                }
+            } else {
+                return el
+            }
+        })
+        setOrder(newOrder)
+    }
+
     const handleBasketShow = () => {
         setBasketShow(!isBasketShow)
     }
@@ -69,6 +100,8 @@ function Shop() {
                 order={order}
                 handleBasketShow={handleBasketShow}
                 removeFromBasket={removeFromBasket}
+                incrementQuantity={incrementQuantity}
+                decrementQuantity={decrementQuantity}
             />
         }
     </main>

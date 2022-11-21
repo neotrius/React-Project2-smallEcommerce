@@ -4,7 +4,9 @@ function BasketList(props) {
     const {
         order = [],
         handleBasketShow,
-        removeFromBasket
+        removeFromBasket,
+        incrementQuantity,
+        decrementQuantity
     } = props
 
     const totalPrice = order.reduce((sum, el) => {
@@ -20,6 +22,8 @@ function BasketList(props) {
                     key={el.id}
                     {...el}
                     removeFromBasket={removeFromBasket}
+                    incrementQuantity={incrementQuantity}
+                    decrementQuantity={decrementQuantity}
                 />
             )) : <li className="collection-item">Cart is empty</li>
         }
