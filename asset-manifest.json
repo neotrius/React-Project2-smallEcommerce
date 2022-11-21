@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/React-Project2-smallEcommerce/static/css/main.eadd99b7.css",
+    "main.js": "/React-Project2-smallEcommerce/static/js/main.c2cf75f7.js",
+    "index.html": "/React-Project2-smallEcommerce/index.html",
+    "main.eadd99b7.css.map": "/React-Project2-smallEcommerce/static/css/main.eadd99b7.css.map",
+    "main.c2cf75f7.js.map": "/React-Project2-smallEcommerce/static/js/main.c2cf75f7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eadd99b7.css",
+    "static/js/main.c2cf75f7.js"
+  ]
+}
